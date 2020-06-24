@@ -1,0 +1,8 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/bookexchange?serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: bookexchange
+    password: bookexchange
