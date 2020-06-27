@@ -30,7 +30,13 @@ public class ResgisterController {
         return matcher.find();
     }
 
+    private boolean validationNumberPhone(String number){
+        return number.matches("^\\+?\\d{7,14}$");
+    }
 
+    private boolean validationStudentId(String studentId){
+        return studentId.matches("^[0-9A-Za-z]+$");
+    }
 
     @GetMapping("/register")
     public String renderPage(){
@@ -45,7 +51,15 @@ public class ResgisterController {
 
         try{
             if(!this.validationEmail(form.getEmail())){
-                return "redirect:/register";
+                return "redirect:/register?invalid=email";
+            }
+
+            if(!this.validationNumberPhone(form.getPhoneNumber())){
+                return "redirect:/register?invalid=number_phone";
+            }
+
+            if(!this.validationStudentId(form.getStudentId())){
+                return "redirect:/register?invalid=student_id";
             }
 
             User user = User.builder()
