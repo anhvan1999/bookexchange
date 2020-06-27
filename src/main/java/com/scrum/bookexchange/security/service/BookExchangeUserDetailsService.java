@@ -20,7 +20,7 @@ public class BookExchangeUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> user = userRepos.findByUsername(username);
+        Optional<User> user = userRepos.findByEmail(username);
         if (user.isEmpty()) {
             throw new UsernameNotFoundException(username);
         }

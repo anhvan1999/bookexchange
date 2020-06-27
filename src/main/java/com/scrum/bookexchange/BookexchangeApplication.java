@@ -32,11 +32,15 @@ class BookExchangeRunner implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		User defaultUser = User.builder()
-				.username("user")
+				.email("user@gmail.com")
+				.schoolName("HCMUT")
+				.phoneNumber("01234567890")
+				.studentId("1711096")
 				.password(encoder.encode("user"))
 				.fullName("Nguyen Van A")
 				.active(true)
 				.role("USER")
+				.avatarPath("/test")
 				.build();
 		repos.save(defaultUser);
 	}

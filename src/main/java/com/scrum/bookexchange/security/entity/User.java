@@ -26,13 +26,25 @@ public class User {
     private Long id;
 
     @Column(unique = true, nullable = false)
-    private String username;
+    private String email;
 
     @Column(nullable = false)
     private String password;
 
     @Column(nullable = false)
+    private String schoolName;
+
+    @Column(nullable = false)
+    private String studentId;
+
+    @Column(nullable = false)
+    private String avatarPath;
+
+    @Column(nullable = false)
     private String fullName;
+
+    @Column(nullable = false)
+    private String phoneNumber;
 
     @Column(nullable = false)
     @Builder.Default
