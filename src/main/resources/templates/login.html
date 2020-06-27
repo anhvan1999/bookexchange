@@ -41,13 +41,13 @@
                                     <input type="password" id="password" class="form-control" name="password"
                                         placeholder="Mật khẩu" value="" required />
                                 </div>
+                                <div class="col-md-12 form-group text-danger" th:if="${error}">
+                                    Thông tin đăng nhập không hợp lệ!!!
+                                </div>
                                 <div class="col-md-12 form-group" >
                                     <input type="submit" class="btn btn-success" value="Đăng nhập"></input>
                                 </div>
                             </div>
-
-                            
-
                         </form>
                     </div>
 
