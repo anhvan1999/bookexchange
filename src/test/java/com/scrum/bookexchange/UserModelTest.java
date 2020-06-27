@@ -18,7 +18,7 @@ public class UserModelTest {
     UserRepos repos;
 
     @Test
-    void testUserModelNotValid() {
+    void testUserModelNotFulfilled() {
         User user = User.builder()
                 .email("anhvan1999@gmail.com")
                 .password("123").build();
@@ -29,7 +29,7 @@ public class UserModelTest {
     }
 
     @Test
-    void testUserModelValid() {
+    void testEmailNotValid() {
         User user = User.builder()
                 .email("anhvan1999@gmail.com")
                 .active(true)
