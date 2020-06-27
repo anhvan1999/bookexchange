@@ -14,7 +14,7 @@ public class ResgisterController {
 
     @GetMapping("/register")
     public String renderPage(){
-        return "home";
+        return "register";
     }
 
     @PostMapping(
