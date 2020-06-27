@@ -34,7 +34,7 @@ public class User {
     @Column(nullable = false)
     private String schoolName;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String studentId;
 
     @Column(nullable = false)

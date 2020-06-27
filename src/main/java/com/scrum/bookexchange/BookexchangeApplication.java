@@ -35,6 +35,7 @@ class BookExchangeRunner implements ApplicationRunner {
 				.email("user@gmail.com")
 				.schoolName("HCMUT")
 				.phoneNumber("01234567890")
+				.studentId("1711096")
 				.password(encoder.encode("user"))
 				.fullName("Nguyen Van A")
 				.active(true)
