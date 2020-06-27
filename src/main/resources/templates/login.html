@@ -20,14 +20,14 @@
                 <form method="GET" action="/register">
                     <input type="submit" class="btn btn-success" value="Đăng ký"></input>
                 </form>
-               
-               <br />
+
+                <br />
             </div>
             <div class="col-md-9 register-right">
-               
+
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                       
+
                         <form action="/login" method="POST" id="login">
                             <div class="row register-form" style="margin-left: 10%; margin-right: 10%;">
                                 <h2 class="col-md-12" style="color:rgb(0, 47, 255);font-weight: bold;">Đăng nhập</h2>
@@ -44,7 +44,7 @@
                                 <div class="col-md-12 form-group text-danger" th:if="${error}">
                                     Thông tin đăng nhập không hợp lệ!!!
                                 </div>
-                                <div class="col-md-12 form-group" >
+                                <div class="col-md-12 form-group">
                                     <input type="submit" class="btn btn-success" value="Đăng nhập"></input>
                                 </div>
                             </div>

@@ -20,8 +20,8 @@
                 <form method="GET" action="/login">
                     <input type="submit" class="btn btn-success" value="Đăng nhập"></input>
                 </form>
-               
-               <br />
+
+                <br />
             </div>
             <div class="col-md-9 register-right">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -89,9 +89,12 @@
                     e.preventDefault();
                     let password = document.getElementById("password").value;
                     let _password = document.getElementById("_password").value;
-                    if (password === _password){
+                    if (password === _password) {
                         isValid = true;
                         $('#register').submit();
+                    }
+                    else{
+                        alert("Mật khẩu nhập lại chưa đúng!!");
                     }
                 }
             });
