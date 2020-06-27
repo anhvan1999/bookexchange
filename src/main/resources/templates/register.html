@@ -67,7 +67,7 @@
                                 <input type="submit" class="btnRegister" value="Đăng ký" />
                             </div>
                         </div> -->
-                        <form action = "/register" method = "POST">
+                        <form action = "/register" method = "POST" id="register">
                             <div class="row register-form" action>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -76,7 +76,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control" name="email" placeholder="Email"
-                                            value="" pattern="[a-zA-Z][\.a-zA-Z0-9]*@[a-z]+([.][a-z])+" required>
+                                            value=""  required>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control" name="password"
@@ -95,12 +95,12 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="text" minlength="5"  name="studentId"
-                                            class="form-control" placeholder="MSSV" value="" required/>
+                                            class="form-control" pattern="[A-Za-z0-9]+" placeholder="MSSV" value="" required/>
                                     </div>
 
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="phoneNumber" minlength="8" maxlength="15" 
-                                            placeholder="Số điện thoại" value="" required/>
+                                            placeholder="Số điện thoại" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" value="" required/>
                                     </div>
                                     <input type="submit" class="btnRegister" value="Đăng ký" />
                                 </div>
@@ -115,6 +115,17 @@
             </div>
         </div>
     </div>
+    <script>
+        let isValid = false;
+        $("#register").on("submit", e => {
+            if(!isValid){
+                e.preventDefault();
+            } else {
+                var password = $()
+            }
+            
+        });
+    </script>
 
 </div>
 
