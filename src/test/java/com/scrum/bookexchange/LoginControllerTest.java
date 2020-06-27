@@ -14,53 +14,40 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class LoginControllerTest {
-    
+
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     void testLoginPage() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/login"))
-                .andExpect(MockMvcResultMatchers.status().isOk());
+        mockMvc.perform(MockMvcRequestBuilders.get("/login")).andExpect(MockMvcResultMatchers.status().isOk());
     }
 
     @Test
-    void testLoginFormSuccess() throws Exception{
+    void testLoginFormSuccess() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("username","user@gmail.com")
-                        .param("password","user")
-                        )
-                        .andExpect(redirectedUrl("/"))
-                        .andExpect(status().is3xxRedirection());
+                .param("username", "user@gmail.com").param("password", "user")).andExpect(redirectedUrl("/"))
+                .andExpect(status().is3xxRedirection());
     }
 
     @Test
-    void testLoginFormWrongEmail() throws Exception{
+    void testLoginFormWrongEmail() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("username","anhvan1999@gmail.com")
-                        .param("password","1234")
-                        )
-                        .andExpect(redirectedUrl("/login?error"))
-                        .andExpect(status().is3xxRedirection());
+                .param("username", "anhvan1999@gmail.com").param("password", "1234"))
+                .andExpect(redirectedUrl("/login?error")).andExpect(status().is3xxRedirection());
     }
 
     @Test
-    void testLoginFormWrongPassword() throws Exception{
+    void testLoginFormWrongPassword() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("username","user@gmail.com")
-                        .param("password","1234")
-                        )
-                        .andExpect(redirectedUrl("/login?error"))
-                        .andExpect(status().is3xxRedirection());
+                .param("username", "user@gmail.com").param("password", "1234")).andExpect(redirectedUrl("/login?error"))
+                .andExpect(status().is3xxRedirection());
     }
 
     @Test
-    void testLoginFormEmailNotValid() throws Exception{
+    void testLoginFormEmailNotValid() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("username","anhvan1999gmail.com")
-                        .param("password","1234")
-                        )
-                        .andExpect(redirectedUrl("/login?error"))
-                        .andExpect(status().is3xxRedirection());
+                .param("username", "anhvan1999gmail.com").param("password", "1234"))
+                .andExpect(redirectedUrl("/login?error")).andExpect(status().is3xxRedirection());
     }
 }

@@ -13,18 +13,17 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest
 @Transactional
 public class UserModelTest {
-    
+
     @Autowired
     UserRepos repos;
 
     @Test
     void testUserModelNotFulfilled() {
-        User user = User.builder()
-                .email("anhvan1999@gmail.com")
-                .password("123").build();
+        User user = User.builder().email("anhvan1999@gmail.com").password("123").build();
 
         assertThrows(Exception.class, () -> {
             repos.save(user);
         });
     }
+
 }
