@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.regex.Matcher;
@@ -39,7 +40,11 @@ public class ResgisterController {
     }
 
     @GetMapping("/register")
-    public String renderPage(){
+    public String renderPage(
+            @RequestParam(name= "error", defaultValue = "false", required = false) boolean error,
+            Model model
+    ){
+        model.addAttribute("error", error);
         return "register";
     }
 
@@ -77,7 +82,7 @@ public class ResgisterController {
             userRepos.save(user);
             return "redirect:/login";
         } catch (Exception e) {
-            return "redirect:/register";
+            return "redirect:/register?error=true";
         }
     }
 }
