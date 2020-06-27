@@ -27,19 +27,4 @@ public class UserModelTest {
             repos.save(user);
         });
     }
-
-    @Test
-    void testEmailNotValid() {
-        User user = User.builder()
-                .email("anhvan1999@gmail.com")
-                .active(true)
-                .fullName("Dang Anh Van")
-                .password("12334")
-                .schoolName("HCMUT")
-                .studentId("21333")
-                .avatarPath("foo")
-                .phoneNumber("1923776")
-                .role("USER").build();
-        repos.save(user);
-    }
 }
