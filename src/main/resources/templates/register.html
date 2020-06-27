@@ -67,7 +67,7 @@
                                 <input type="submit" class="btnRegister" value="Đăng ký" />
                             </div>
                         </div> -->
-                        <form action = "/register" method = "POST">
+                        <form action = "/register" method = "POST" id="register">
                             <div class="row register-form" action>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -115,6 +115,17 @@
             </div>
         </div>
     </div>
+    <script>
+        let isValid = false;
+        $("#register").on("submit", e => {
+            if(!isValid){
+                e.preventDefault();
+            } else {
+                var password = $()
+            }
+            
+        });
+    </script>
 
 </div>
 
