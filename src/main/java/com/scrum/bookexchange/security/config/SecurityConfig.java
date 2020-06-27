@@ -38,12 +38,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/",
                         "/js/**",
                         "/css/**",
-                        "/register"
+                        "/register",
+                        "/login"
                 )
                 .permitAll()
                 .anyRequest().authenticated()
             .and()
                 .formLogin()
+                .loginPage("/login")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/")
             .and()
                 .logout();
     }
