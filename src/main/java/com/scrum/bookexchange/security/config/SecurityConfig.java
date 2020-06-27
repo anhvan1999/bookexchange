@@ -38,7 +38,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/",
                         "/js/**",
                         "/css/**",
-                        "/register"
+                        "/register",
+                        "/testlogin"
+
                 )
                 .permitAll()
                 .anyRequest().authenticated()
