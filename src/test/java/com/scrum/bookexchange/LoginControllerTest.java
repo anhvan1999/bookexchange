@@ -27,7 +27,7 @@ public class LoginControllerTest {
     @Test
     void testLoginFormSuccess() throws Exception{
         mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("email","user@gmail.com")
+                        .param("username","user@gmail.com")
                         .param("password","user")
                         )
                         .andExpect(redirectedUrl("/"))
@@ -37,7 +37,7 @@ public class LoginControllerTest {
     @Test
     void testLoginFormWrongEmail() throws Exception{
         mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("email","anhvan1999@gmail.com")
+                        .param("username","anhvan1999@gmail.com")
                         .param("password","1234")
                         )
                         .andExpect(redirectedUrl("/login?error"))
@@ -47,7 +47,7 @@ public class LoginControllerTest {
     @Test
     void testLoginFormWrongPassword() throws Exception{
         mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("email","user@gmail.com")
+                        .param("username","user@gmail.com")
                         .param("password","1234")
                         )
                         .andExpect(redirectedUrl("/login?error"))
@@ -57,7 +57,7 @@ public class LoginControllerTest {
     @Test
     void testLoginFormEmailNotValid() throws Exception{
         mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("email","anhvan1999gmail.com")
+                        .param("username","anhvan1999gmail.com")
                         .param("password","1234")
                         )
                         .andExpect(redirectedUrl("/login?error"))
