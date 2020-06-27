@@ -1,9 +1,0 @@
-/home/ducvovan/Documents/Course/Sofware/bookexchange/src/main/java/com/scrum/bookexchange/register/UserFormData.java
-/home/ducvovan/Documents/Course/Sofware/bookexchange/src/main/java/com/scrum/bookexchange/security/repos/UserRepos.java
-/home/ducvovan/Documents/Course/Sofware/bookexchange/src/main/java/com/scrum/bookexchange/security/service/BookExchangeUserDetails.java
-/home/ducvovan/Documents/Course/Sofware/bookexchange/src/main/java/com/scrum/bookexchange/security/config/SecurityConfig.java
-/home/ducvovan/Documents/Course/Sofware/bookexchange/src/main/java/com/scrum/bookexchange/BookexchangeApplication.java
-/home/ducvovan/Documents/Course/Sofware/bookexchange/src/main/java/com/scrum/bookexchange/register/ResgisterController.java
-/home/ducvovan/Documents/Course/Sofware/bookexchange/src/main/java/com/scrum/bookexchange/security/entity/User.java
-/home/ducvovan/Documents/Course/Sofware/bookexchange/src/main/java/com/scrum/bookexchange/homepage/HomeController.java
-/home/ducvovan/Documents/Course/Sofware/bookexchange/src/main/java/com/scrum/bookexchange/security/service/BookExchangeUserDetailsService.java
