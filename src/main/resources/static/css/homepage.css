@@ -1,0 +1,60 @@
+.book-image {
+    width: 190px;
+    height: 300px;
+  }
+.single-course{
+    /* padding:20px; */
+    margin:20px;
+    font-size: 18px;
+    width: 200px;
+    border: transparent solid 5px;
+}
+.details{
+    padding:10px;
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+.single-course:hover{
+    border: #e2e8f0 solid 5px;
+}
+
+.available-label {
+    color: #fff;
+    width: 140px;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    margin-top: -80px;
+    margin-left: 30px;
+    border:white solid 1px;
+  }
+.available-label-color{
+    background-color: green;
+}
+.unavailable-label-color{
+    background-color: #f53f51;
+}
+.frame-book{
+    display: flex;
+    padding-top:20px;
+    padding-bottom: 20px;
+    align-items: center;
+   justify-content: center;
+}
+.center-item {
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.title{
+    white-space: nowrap; 
+    width:180px;
+    font-size:20px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.title:hover {
+    white-space: normal;
+    overflow: visible;
+  }
