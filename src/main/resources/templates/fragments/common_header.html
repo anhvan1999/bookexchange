@@ -22,7 +22,7 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" style="background-color:blue;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${username}">
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Trang Cá Nhân</a>
+                <a class="dropdown-item" th:href="@{/profile}">Trang Cá Nhân</a>
                 <a class="dropdown-item" th:href="@{/logout}">Đăng Xuất</a>
             </div>
         </div>

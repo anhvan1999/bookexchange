@@ -16,9 +16,10 @@ public class HomeController {
         model.addAttribute("username", principal != null ? principal.getName() : null);
         return "home";
     }
-    // @GetMapping("homepage")
-    // public String getLoginPage(){
-    //     return "home";
-    // }
+    @GetMapping("/profile")
+    public String getLoginPage(Principal principal, Model model){
+        model.addAttribute("username", principal != null ? principal.getName() : null);
+        return "profile";
+    }
 
 }
