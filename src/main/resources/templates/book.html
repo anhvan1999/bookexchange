@@ -14,21 +14,32 @@
     <th:block th:replace="fragments/common_header.html :: header(${username})" />
     <div class="container center-item">
         <div>
-            <h1 class="d-flex justify-content-center" style="color: blue;">Harry Potter và phòng chứa bí mật</h1>
+            <h1 class="d-flex justify-content-center book-title">Harry Potter và phòng chứa bí mật</h1>
         </div>
         <div>
-            <p class="d-flex justify-content-end">Chủ sở hữu: Nguyễn Công Anh Đày</p>
+            <p class="d-flex justify-content-end book-owner">Chủ sở hữu: Nguyễn Công Anh "Đày"</p>
         </div>
         <div>
             <div class="row center-item" >
-                <div class="frame-book">
-                    <img class="img-fluid book-image" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                <div class="multi_img">                    
+                    <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                    <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                    <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                    <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                    <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                    <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                    <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                    <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
                 </div>
             </div>
         </div>
         <div class="custom-control custom-radio">
             <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
             <label class="custom-control-label" for="defaultUnchecked">Default unchecked</label>
+        </div>
+        <div class="row center-item" >
+                <div class="option-img"></div>                  
+                <!-- <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh"> -->
         </div>
        <div>
            <form action="">
