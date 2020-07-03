@@ -31,5 +31,5 @@ public class Book {
     private Set<Image> images;
 
     @OneToMany(mappedBy = "book")
-    private Set<Option> options;
+    private Set<BookOption> options;
 }

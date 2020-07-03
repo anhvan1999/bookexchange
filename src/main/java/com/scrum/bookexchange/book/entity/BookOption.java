@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Option {
+public class BookOption {
     @Setter(value= AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
@@ -23,5 +23,5 @@ public class Option {
     private Book book;
 
     @Column(nullable = false)
-    private String option;
+    private String optionString;
 }

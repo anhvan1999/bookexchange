@@ -1,8 +1,8 @@
 package com.scrum.bookexchange;
 
 import com.scrum.bookexchange.book.entity.Book;
+import com.scrum.bookexchange.book.entity.BookOption;
 import com.scrum.bookexchange.book.entity.Image;
-import com.scrum.bookexchange.book.entity.Option;
 import com.scrum.bookexchange.book.repos.BookRepos;
 import com.scrum.bookexchange.book.repos.ImageRepos;
 import com.scrum.bookexchange.book.repos.OptionRepos;
@@ -62,7 +62,7 @@ class BookExchangeRunner implements ApplicationRunner {
 
 		imageRepos.save(image);
 
-		Option option = Option.builder().book(book).option("Money").build();
+		BookOption option = BookOption.builder().book(book).optionString("Money").build();
 
 		optionRepos.save(option);
 	}
