@@ -34,16 +34,18 @@
                     <p> Nguyễn Công Anh</p>
                 </div>
             </div>
-            <div class="single-course item">
-                <div class="frame-book">
-                    <img class="img-fluid book-image" th:src="@{/img/harry3.jpg}">
+            <a th:href="@{/book(id=${1})}">
+                <div class="single-course item">
+                    <div class="frame-book" >
+                        <img class="img-fluid book-image" th:src="@{/img/harry3.jpg}">
+                    </div>
+                    <p class="available-label unavailable-label-color">Không có sẵn</p>
+                    <div class="details">
+                        <p class="title">Harry Potter và phòng chứa bí mật</p>
+                        <p> Nguyễn Công Anh</p>
+                    </div>
                 </div>
-                <p class="available-label unavailable-label-color">Không có sẵn</p>
-                <div class="details">
-                    <p class="title">Harry Potter và phòng chứa bí mật</p>
-                    <p> Nguyễn Công Anh</p>
-                </div>
-            </div>
+            </a>
             <div class="single-course item">
                 <div class="frame-book">
                     <img class="img-fluid book-image " th:src="@{/img/conan3.jpg}">

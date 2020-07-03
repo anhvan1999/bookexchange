@@ -21,5 +21,11 @@ public class HomeController {
         model.addAttribute("username", principal != null ? principal.getName() : null);
         return "profile";
     }
+    @GetMapping("/book")
+    public String getBookPage(Principal principal, Model model){
+        model.addAttribute("username", principal != null ? principal.getName() : null);
+        return "book";
+    }
+
 
 }

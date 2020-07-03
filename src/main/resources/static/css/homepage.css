@@ -5,6 +5,7 @@
 .single-course{
     /* padding:20px; */
     margin:20px;
+    color: black;
     font-size: 18px;
     width: 200px;
     border: transparent solid 5px;
@@ -16,6 +17,7 @@
 }
 .single-course:hover{
     border: #e2e8f0 solid 5px;
+    text-decoration: none;
 }
 
 .available-label {
