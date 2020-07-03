@@ -49,10 +49,10 @@ public class UploadController {
             if(!this.validationName(form.getTitle())){
                 return "redirect:/upload?invalid=name";
             }
-            
+            System.out.print(principal.getName());
             // Book book = Book.builder()
             //         .title(form.getTitle())
-            //         .owner(principal.getName())
+            //         .owner("Somethings")
             //         .build();
             // bookRepos.save(book);
             // for (int i=0;i<form.getOptions().size();i++)
