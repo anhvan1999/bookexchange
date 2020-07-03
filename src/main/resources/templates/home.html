@@ -74,6 +74,16 @@
                     <p> Nguyễn Công Anh</p>
                 </div>
             </div>
+            <div class="single-course item" th:each="book : ${bookList}">
+                <div class="frame-book">
+                    <img class="img-fluid book-image" th:src="@{'/image/' + ${book.defaultImageLink}}">
+                </div>
+                <p class="available-label available-label-color">Có sẵn</p>
+                <div class="details">
+                    <p class="title" th:text="${book.title}"></p>
+                    <p th:text="${book.owner.fullName}"></p>
+                </div>
+            </div>
         </div>
         
        

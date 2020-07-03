@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.AllArgsConstructor;
 
 import java.security.Principal;
+import java.util.Collections;
 import java.util.List;
 
 import com.scrum.bookexchange.book.entity.Book;
@@ -23,6 +24,9 @@ public class HomeController {
     @GetMapping("")
     public String getHome(Principal principal, Model model) {
         List<Book> bookList = bookRepos.findAll();
+
+        Collections.reverse(bookList);
+
         model.addAttribute("bookList", bookList);
         model.addAttribute("username", principal != null ? principal.getName() : null);
         return "home";
