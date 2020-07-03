@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class UserFormData {
+
     private String email;
 
     private String password;
@@ -15,4 +16,5 @@ public class UserFormData {
     private String fullName;
 
     private String phoneNumber;
+    
 }

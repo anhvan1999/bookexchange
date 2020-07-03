@@ -9,7 +9,11 @@ import org.springframework.web.multipart.MultipartFile;
 @Data
 @AllArgsConstructor
 public class BookFormData {
+
     private String title;
+
     private List<MultipartFile> images;
+
     private List<String> options;
+    
 }

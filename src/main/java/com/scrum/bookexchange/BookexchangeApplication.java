@@ -1,11 +1,5 @@
 package com.scrum.bookexchange;
 
-import com.scrum.bookexchange.book.entity.Book;
-import com.scrum.bookexchange.book.entity.BookOption;
-import com.scrum.bookexchange.book.entity.Image;
-import com.scrum.bookexchange.book.repos.BookRepos;
-import com.scrum.bookexchange.book.repos.ImageRepos;
-import com.scrum.bookexchange.book.repos.OptionRepos;
 import com.scrum.bookexchange.security.entity.User;
 import com.scrum.bookexchange.security.repos.UserRepos;
 
@@ -32,9 +26,6 @@ public class BookexchangeApplication {
 class BookExchangeRunner implements ApplicationRunner {
 
 	private final UserRepos repos;
-	private final BookRepos bookRepos;
-	private final ImageRepos imageRepos;
-	private final OptionRepos optionRepos;
 
 	private final PasswordEncoder encoder;
 

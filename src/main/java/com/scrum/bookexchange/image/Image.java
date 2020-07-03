@@ -13,16 +13,13 @@ import java.io.InputStream;
 
 @Controller
 public class Image {
-    @GetMapping(
-            value = "/image/{name}",
-            produces = {MediaType.IMAGE_JPEG_VALUE}
-    )
-    public @ResponseBody
-    byte[] getImage(@PathVariable("name") String name) throws IOException {
-        
-        String filePath = System.getProperty("user.dir") + "/upload/" + name;
 
+    @ResponseBody
+    @GetMapping(value = "/image/{name}", produces = { MediaType.IMAGE_JPEG_VALUE })
+    public byte[] getImage(@PathVariable("name") String name) throws IOException {
+        String filePath = System.getProperty("user.dir") + "/upload/" + name;
         InputStream in = new FileInputStream(filePath);
         return IOUtils.toByteArray(in);
     }
+
 }

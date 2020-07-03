@@ -21,7 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 @Transactional
 public class UploadController {
-    
+
     @Autowired
     private BookRepos bookRepos;
 

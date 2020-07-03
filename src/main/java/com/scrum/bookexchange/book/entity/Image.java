@@ -12,6 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Image {
+
     @Setter(value=AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
@@ -23,4 +24,5 @@ public class Image {
     private Book book;
 
     private String path;
+    
 }

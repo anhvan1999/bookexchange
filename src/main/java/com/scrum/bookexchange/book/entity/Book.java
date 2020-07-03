@@ -13,6 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book {
+
     @Setter(value=AccessLevel.NONE)
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
