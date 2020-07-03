@@ -163,7 +163,7 @@
 
                 for (let file of files) {
                     if (file.files[0]) {
-                        data.append('files', file.files[0]);
+                        data.append('images', file.files[0]);
                     }
                 }
 
@@ -185,11 +185,10 @@
                     processData: false,
                     data: data,
                     success: function (result) {
-                        console.log(result);
-                        alert('upload success');
+                        window.location.href = "/upload?message=success";
                     },
                     error: function (err) {
-                        console.log(err);
+                        window.location.href = "/upload?message=error";
                     }
                 });
             });
