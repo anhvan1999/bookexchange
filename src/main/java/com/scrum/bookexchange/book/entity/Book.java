@@ -6,7 +6,6 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Data
@@ -29,5 +28,5 @@ public class Book {
 
     @Column(nullable = false)
     private String defaultImageLink;
-    
+
 }
