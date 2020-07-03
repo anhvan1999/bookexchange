@@ -24,55 +24,87 @@
                 <br />
             </div>
             <div class="col-md-9 register-right">
-                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <!-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                             aria-controls="home" aria-selected="true">Sinh viên</a>
                     </li>
 
-                </ul>
+                </ul> -->
+                
                 <div class="tab-content" id="myTabContent">
+                    
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div id="warning" class="alert alert-danger" role="alert" th:if="${error}">
                             Thông tin đăng ký không hợp lệ!
                         </div>
                         <form action="/register" method="POST" id="register">
+                            
                             <div class="row register-form" action>
+                                <h3 class="col-md-12" style="color:rgb(0, 47, 255);font-weight: bold;">Đăng kí tài khoản</h2>
                                 <div class="col-md-6">
+                                    <div>
+                                        <label>Họ và tên</label>
+                                        <label style="color: red;">*</label>
+                                   </div>
+                                    
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="fullName" placeholder="Họ và tên"
+                                        <input type="text" class="form-control" name="fullName" 
                                             value="" required />
                                     </div>
+                                    <div>
+                                        <label>Email</label>
+                                        <label style="color: red;">*</label>
+                                    </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="email" placeholder="Email"
+                                        <input type="email" class="form-control" name="email" 
                                             value="" required>
+                                    </div>
+                                    <div>
+                                        <label>Mật khẩu</label>
+                                        <label style="color: red;">*</label>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" id="password" class="form-control" name="password"
-                                            placeholder="Mật khẩu" value="" required />
+                                             value="" required />
+                                    </div>
+                                    <div>
+                                        <label>Nhập lại mật khẩu</label>
+                                        <label style="color: red;">*</label>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" id="_password" class="form-control"
-                                            placeholder="Nhập lại mật khẩu" value="" required />
+                                            value="" required />
                                     </div>
 
                                 </div>
                                 <div class="col-md-6">
+                                    <div>
+                                        <label>Trường</label>
+                                        <label style="color: red;">*</label>
+                                    </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="schoolName" placeholder="Trường"
+                                        <input type="text" class="form-control" name="schoolName" 
                                             value="" required />
+                                    </div>
+                                    <div>
+                                        <label>Mã số sinh viên</label>
+                                        <label style="color: red;">*</label>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" minlength="5" name="studentId" class="form-control"
-                                            pattern="[A-Za-z0-9]+" placeholder="MSSV" value="" required />
+                                            pattern="[A-Za-z0-9]+" value="" required />
                                     </div>
-
+                                    <div>
+                                        <label>Số điện thoại</label>
+                                        <label style="color: red;">*</label>
+                                    </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="phoneNumber" minlength="8"
-                                            maxlength="15" placeholder="Số điện thoại"
-                                            pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" value="" required />
+                                            maxlength="15" 
+                                            pattern="^[+][(]{0,1}[0-9]{1,4}[)]{0,1} [-\s\./0-9]*$" value="" required />
                                     </div>
-                                    <input type="submit" class="btnRegister" value="Đăng ký" />
+                                    <input type="submit" class="btnRegister btn-success" value="Đăng ký" />
                                 </div>
                             </div>
 

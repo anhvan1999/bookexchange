@@ -1,6 +1,6 @@
 <header th:fragment="header(username)">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">ExBook</a>
+        <a class="navbar-brand" href="#" style="font-weight: bold;">BookExchange</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,7 +15,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Nhập...." aria-label="Tìm Kiếm">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
             </form>
         </div>
         <div class="dropdown ml-2 mr-1" th:if="${username != null}">
@@ -27,11 +27,11 @@
             </div>
         </div>
         <a th:href="@{/register}">
-            <button type="button" class="btn btn-light ml-2 mr-1" th:if="${username == null}">Register</button>
+            <button type="button" class="btn btn-light ml-2 mr-1" th:if="${username == null}">Đăng kí</button>
         </a>
 
         <a th:href="@{/login}">
-            <button type="button" class="btn btn-dark mr-1" th:if="${username == null}">Login</button>
+            <button type="button" class="btn btn-dark mr-1" th:if="${username == null}">Đăng nhập</button>
         </a>
 
     </nav>
