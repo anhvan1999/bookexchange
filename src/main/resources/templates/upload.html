@@ -177,6 +177,9 @@
                 $.ajax({
                     type: 'POST',
                     url: '/upload',
+                    xhrFields: {
+                        withCredentials: true
+                    },
                     cache: false,
                     contentType: false,
                     processData: false,

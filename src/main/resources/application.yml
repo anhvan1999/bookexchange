@@ -1,4 +1,8 @@
 spring:
+  http:
+    multipart:
+      max-file-size: 1024Mb
+      max-request-size: 1024Mb
   jpa:
     hibernate:
       ddl-auto: create-drop

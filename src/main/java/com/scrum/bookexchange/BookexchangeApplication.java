@@ -54,7 +54,7 @@ class BookExchangeRunner implements ApplicationRunner {
 
 		defaultUser = repos.save(defaultUser);
 
-		Book book = Book.builder().title("OS").owner(defaultUser).build();
+		Book book = Book.builder().title("OS").owner(defaultUser).defaultImageLink("/").build();
 
 		book = bookRepos.save(book);
 
