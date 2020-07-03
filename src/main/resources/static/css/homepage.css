@@ -1,14 +1,11 @@
 .book-image {
-    max-width: 200px;
-    height: 300px;
-    
+    max-width: 190px;
   }
 .single-course{
-    float: left;
     /* padding:20px; */
     margin:20px;
     font-size: 18px;
-    width: 250px;
+    width: 200px;
     border: transparent solid 5px;
 }
 .details{
@@ -20,8 +17,7 @@
     border: #e2e8f0 solid 5px;
 }
 
-.available-btn {
-    background-color: #f53f51;
+.available-label {
     color: #fff;
     width: 140px;
     text-align: center;
@@ -30,6 +26,12 @@
     margin-top: -80px;
     margin-left: 30px;
   }
+.available-label-color{
+    background-color: #f53f51;
+}
+.unavailable-label-color{
+    background-color: green;
+}
 .frame-book{
     display: flex;
     padding-top:20px;
@@ -37,7 +39,7 @@
     align-items: center;
    justify-content: center;
 }
-.center-item{
+.center-item {
     align-items: center;
     justify-content: center;
 }
