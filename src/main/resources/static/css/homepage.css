@@ -26,6 +26,7 @@
     position: absolute;
     margin-top: -80px;
     margin-left: 30px;
+    border:white solid 1px;
   }
 .available-label-color{
     background-color: green;
@@ -41,7 +42,7 @@
    justify-content: center;
 }
 .center-item {
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
