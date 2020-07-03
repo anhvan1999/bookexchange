@@ -1,17 +1,16 @@
 .book-image {
-    max-width: 200px;
+    width: 190px;
     height: 300px;
   }
 .single-course{
-    float: left;
     /* padding:20px; */
     margin:20px;
     font-size: 18px;
-    width: 250px;
+    width: 200px;
     border: transparent solid 5px;
 }
 .details{
-    padding:20px;
+    padding:10px;
     margin-bottom: 0px;
     font-size: 18px;
 }
@@ -19,8 +18,7 @@
     border: #e2e8f0 solid 5px;
 }
 
-.available-btn {
-    background-color: #f53f51;
+.available-label {
     color: #fff;
     width: 140px;
     text-align: center;
@@ -29,6 +27,12 @@
     margin-top: -80px;
     margin-left: 30px;
   }
+.available-label-color{
+    background-color: green;
+}
+.unavailable-label-color{
+    background-color: #f53f51;
+}
 .frame-book{
     display: flex;
     padding-top:20px;
@@ -36,7 +40,20 @@
     align-items: center;
    justify-content: center;
 }
-.center-item{
+.center-item {
     align-items: center;
     justify-content: center;
 }
+
+.title{
+    white-space: nowrap; 
+    width:180px;
+    font-size:20px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.title:hover {
+    white-space: normal;
+    overflow: visible;
+  }
