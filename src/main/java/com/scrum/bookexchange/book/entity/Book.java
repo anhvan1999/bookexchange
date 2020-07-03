@@ -29,4 +29,7 @@ public class Book {
 
     @OneToMany(mappedBy = "book")
     private Set<Image> images;
+
+    @OneToMany(mappedBy = "book")
+    private Set<Option> options;
 }

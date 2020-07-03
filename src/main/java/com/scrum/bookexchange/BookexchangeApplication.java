@@ -1,5 +1,11 @@
 package com.scrum.bookexchange;
 
+import com.scrum.bookexchange.book.entity.Book;
+import com.scrum.bookexchange.book.entity.Image;
+import com.scrum.bookexchange.book.entity.Option;
+import com.scrum.bookexchange.book.repos.BookRepos;
+import com.scrum.bookexchange.book.repos.ImageRepos;
+import com.scrum.bookexchange.book.repos.OptionRepos;
 import com.scrum.bookexchange.security.entity.User;
 import com.scrum.bookexchange.security.repos.UserRepos;
 
@@ -26,6 +32,9 @@ public class BookexchangeApplication {
 class BookExchangeRunner implements ApplicationRunner {
 
 	private final UserRepos repos;
+	private final BookRepos bookRepos;
+	private final ImageRepos imageRepos;
+	private final OptionRepos optionRepos;
 
 	private final PasswordEncoder encoder;
 
@@ -42,7 +51,20 @@ class BookExchangeRunner implements ApplicationRunner {
 				.role("USER")
 				.avatarPath("/test")
 				.build();
-		repos.save(defaultUser);
+
+		defaultUser = repos.save(defaultUser);
+
+		Book book = Book.builder().title("OS").owner(defaultUser).build();
+
+		book = bookRepos.save(book);
+
+		Image image = Image.builder().book(book).path("/home/user/").build();
+
+		imageRepos.save(image);
+
+		Option option = Option.builder().book(book).option("Money").build();
+
+		optionRepos.save(option);
 	}
 	
 }
