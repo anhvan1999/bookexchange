@@ -27,9 +27,7 @@ public class Book {
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     private User owner;
 
-    @OneToMany(mappedBy = "book")
-    private Set<Image> images;
-
-    @OneToMany(mappedBy = "book")
-    private Set<BookOption> options;
+    @Column(nullable = false)
+    private String defaultImageLink;
+    
 }
