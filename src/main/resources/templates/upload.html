@@ -122,35 +122,22 @@
                         </div>
                     </div>
                     <div class="row ml-1">
-                        <p><i class="fa fa-plus imgAdd"></i> Thêm ảnh</p>
+                        <p><i class="fa fa-plus imgAdd" id="add-image"></i> Thêm ảnh</p>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Tên Sách *" required>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Phương Thức Trao Đổi *" required>
+                                <input type="text" class="form-control" placeholder="Tên Sách *" name="title" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Phone Number *" value="" />
+                                <input type="text" class="form-control" placeholder="Phương Thức Trao Đổi *"
+                                    name="method" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Password *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Confirm Password *" value="" />
-                            </div>
-                        </div>
+                        <div id="new-field"></div>
+                        <p><i class="fa fa-plus imgAdd ml-4" id="add-field"></i> Thêm Phương Thức</p>
                     </div>
                     <button type="submit" class="btnSubmit">Submit</button>
                 </div>
@@ -161,25 +148,63 @@
         let images = 1;
 
         document.getElementById("upload")
-        .addEventListener("submit" , function(e){
-            e.preventDefault();
-            
-            let data = new FormData();
-            let files = document.querySelectorAll("input[type='file']");
+            .addEventListener("submit", function (e) {
+                e.preventDefault();
 
-            for (let file of files){
-                if(file.files[0]){
-                    data.append('files', file.files[0]);
+                let data = new FormData();
+                let files = document.querySelectorAll("input[type='file']");
+
+                let title = document.querySelector("input[name='title']").value;
+
+                let methods = document.querySelectorAll("input[name='method']");
+
+                data.append('title', title);
+
+
+                for (let file of files) {
+                    if (file.files[0]) {
+                        data.append('files', file.files[0]);
+                    }
                 }
-            }
-            
-            console.log(data.getAll("files"));
+
+                for (let method of methods) {
+                    if (method.value) {
+                        data.append('options', method.value);
+                    }
+                }
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/upload',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (result) {
+                        console.log(result);
+                        alert('upload success');
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            });
+
+
+
+        $("#add-image").click(function () {
+            $("#images").append(`<div class="col-md-4 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Ảnh<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;" accept="image/*"></label><i class="fa fa-times del"></i></div>`);
         });
 
-        
-
-        $(".imgAdd").click(function () {
-            $("#images").append(`<div class="col-md-4 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Ảnh<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;" accept="image/*"></label><i class="fa fa-times del"></i></div>`);
+        $("#add-field").click(function () {
+            $("#new-field").before(`
+                <div class="col-md-6">
+                        <div class="form-group">
+                        <input type="text" name="method" class="form-control" placeholder="Phương Thức Trao Đổi" required>
+                    </div>
+                </div>
+            `);
         });
 
         $("#images").on("click", "i.del", function () {
