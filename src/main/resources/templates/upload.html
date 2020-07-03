@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng sách</title>
+    <th:block th:replace="fragments/common_head.html :: head" />
+
+    <style>
+        .note {
+            text-align: center;
+            height: 80px;
+            background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+            color: #fff;
+            font-weight: bold;
+            line-height: 80px;
+            font-size: x-large;
+        }
+
+        .form-content {
+            padding: 5%;
+            border: 1px solid #ced4da;
+            margin-bottom: 2%;
+        }
+
+        .form-control {
+            border-radius: 1.5rem;
+        }
+
+        .btnSubmit {
+            border: none;
+            border-radius: 1.5rem;
+            padding: 1%;
+            width: 20%;
+            cursor: pointer;
+            background: #0062cc;
+            color: #fff;
+        }
+
+        .imagePreview {
+            width: 100%;
+            height: 180px;
+            background-position: center center;
+            background-color: #fff;
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: inline-block;
+            box-shadow: 0px -3px 6px 2px rgba(0, 0, 0, 0.2);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .btn-primary {
+            display: block;
+            border-radius: 0px;
+            box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.2);
+            margin-top: -5px;
+        }
+
+        .imgUp {
+            margin-bottom: 15px;
+        }
+
+        .imgUp .btn-primary {
+            border-bottom-left-radius: 10px !important;
+            border-bottom-right-radius: 10px !important;
+            font-weight: bold;
+        }
+
+        .del {
+            position: absolute;
+            top: 0px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+        }
+
+        .imgAdd {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #4bd7ef;
+            color: #fff;
+            box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            line-height: 30px;
+            margin-top: 0px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <th:block th:replace="fragments/common_header.html :: header(${username})" />
+    <form th:action="@{/upload}" id="upload">
+        <div class="container register-form">
+            <div class="form">
+                <div class="note">
+                    <p>Đăng Sách</p>
+                </div>
+                <div class="form-content">
+                    <div class="row d-flex flex-wrap">
+                        <br>
+                        <div class="container">
+                            <div class="row" id="images">
+                                <div class="col-md-4 imgUp">
+                                    <div class="imagePreview"></div>
+                                    <label class="btn btn-primary">
+                                        Ảnh (Bắt Buộc)<input type="file" class="uploadFile img" value="Upload Photo"
+                                            style="width: 0px;height: 0px;overflow: hidden;" accept="image/*" required>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ml-1">
+                        <p><i class="fa fa-plus imgAdd" id="add-image"></i> Thêm ảnh</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Tên Sách *" name="title" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Phương Thức Trao Đổi *"
+                                    name="method" required>
+                            </div>
+                        </div>
+                        <div id="new-field"></div>
+                        <p><i class="fa fa-plus imgAdd ml-4" id="add-field"></i> Thêm Phương Thức</p>
+                    </div>
+                    <button type="submit" class="btnSubmit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        let images = 1;
+
+        document.getElementById("upload")
+            .addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                let data = new FormData();
+                let files = document.querySelectorAll("input[type='file']");
+
+                let title = document.querySelector("input[name='title']").value;
+
+                let methods = document.querySelectorAll("input[name='method']");
+
+                data.append('title', title);
+
+
+                for (let file of files) {
+                    if (file.files[0]) {
+                        data.append('files', file.files[0]);
+                    }
+                }
+
+                for (let method of methods) {
+                    if (method.value) {
+                        data.append('options', method.value);
+                    }
+                }
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/upload',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (result) {
+                        console.log(result);
+                        alert('upload success');
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            });
+
+
+
+        $("#add-image").click(function () {
+            $("#images").append(`<div class="col-md-4 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Ảnh<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;" accept="image/*"></label><i class="fa fa-times del"></i></div>`);
+        });
+
+        $("#add-field").click(function () {
+            $("#new-field").before(`
+                <div class="col-md-6">
+                        <div class="form-group">
+                        <input type="text" name="method" class="form-control" placeholder="Phương Thức Trao Đổi" required>
+                    </div>
+                </div>
+            `);
+        });
+
+        $("#images").on("click", "i.del", function () {
+            $(this).parent().remove();
+        });
+
+        $(function () {
+            $("#images").on("change", ".uploadFile", function () {
+                var uploadFile = $(this);
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return;
+
+                if (/^image/.test(files[0].type)) {
+                    var reader = new FileReader();
+                    reader.readAsDataURL(files[0]);
+
+                    reader.onloadend = function () {
+                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result + ")");
+                    }
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>
