@@ -37,7 +37,7 @@ public class UploadController {
 
     @Autowired
     private UserRepos userRepos;
-    
+
     @PostMapping(
         path = "/upload",
         consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}
