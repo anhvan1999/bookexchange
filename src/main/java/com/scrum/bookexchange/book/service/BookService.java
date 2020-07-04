@@ -6,8 +6,6 @@ import com.scrum.bookexchange.book.entity.Book;
 import com.scrum.bookexchange.book.repos.BookRepos;
 import com.scrum.bookexchange.security.entity.User;
 import com.scrum.bookexchange.security.repos.UserRepos;
-import com.scrum.bookexchange.security.service.BookExchangeUserDetails;
-
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
