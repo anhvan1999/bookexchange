@@ -40,7 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/img/**",
                         "/css/**",
                         "/register",
-                        "/login"
+                        "/login",
+                        "/image/**"
                 )
                 .permitAll()
                 .anyRequest().authenticated()

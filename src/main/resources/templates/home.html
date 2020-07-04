@@ -8,12 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trang Chủ</title>
     <th:block th:replace="fragments/common_head.html :: head" />
+    <style>
+        .a-no{
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 
 <body>
     <th:block th:replace="fragments/common_header.html :: header(${username})" />
     <div class="container center-item">
-        <div class="row center-item" >
+        <div class="row center-item">
             <div class="single-course item">
                 <div class="frame-book">
                     <img class="img-fluid book-image" th:src="@{/img/harry1.jpg}">
@@ -36,7 +41,7 @@
             </div>
             <a th:href="@{/book(id=${1})}">
                 <div class="single-course item">
-                    <div class="frame-book" >
+                    <div class="frame-book">
                         <img class="img-fluid book-image" th:src="@{/img/harry3.jpg}">
                     </div>
                     <p class="available-label unavailable-label-color">Không có sẵn</p>
@@ -77,19 +82,21 @@
                 </div>
             </div>
             <div class="single-course item" th:each="book : ${bookList}">
-                <div class="frame-book">
-                    <img class="img-fluid book-image" th:src="@{'/image/' + ${book.defaultImageLink}}">
-                </div>
-                <p class="available-label available-label-color">Có sẵn</p>
-                <div class="details">
-                    <p class="title" th:text="${book.title}"></p>
-                    <p th:text="${book.owner.fullName}"></p>
-                </div>
+                <a th:href="@{'/book/' + ${book.id}}" class="a-no">
+                    <div class="frame-book">
+                        <img class="img-fluid book-image" th:src="@{'/image/' + ${book.defaultImageLink}}">
+                    </div>
+                    <p class="available-label available-label-color">Có sẵn</p>
+                    <div class="details">
+                        <p class="title" th:text="${book.title}"></p>
+                        <p th:text="${book.owner.fullName}"></p>
+                    </div>
+                </a>
             </div>
         </div>
-        
-       
-        
+
+
+
         <!-- {% comment %} <a href="/store/" class="cta">
             <span>See More</span>
             <svg width="13px" height="10px" viewBox="0 0 13 10">
