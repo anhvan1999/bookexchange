@@ -8,14 +8,121 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Thông tin cá nhân</title>
     <th:block th:replace="fragments/common_head.html :: head" />
+    <link rel="stylesheet" th:href="@{/css/table.css}">
 </head>
 
 <body>
     <th:block th:replace="fragments/common_header.html :: header(${username})" />
     <div class="container-fluid">
-        <div class="col-6">
-ghfh
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6">
+                    <h2>Thông tin cá nhân:</h2>
+                </div>
+                <div class="col-6">
+                    <h2>Các yêu cầu trao đổi:</h2>
+                    <div class="handmade-table container-fluid">
+                        <div class="handmade-table-header">
+                            <div class="row row-cols-8" style="background-color: #00D97E;">
+                                <div class="col-3 text-break">
+                                    <b>Yêu cầu</b>
+                                </div>
+                                <div class="col-2 text-break"></div>
+                                <div class="col-2 text-break"></div>
+
+                            </div>
+                        </div>
+                        <div class="handmade-table-content" style="height: 240px;">
+
+
+
+
+                            <div class="row row-cols-3">
+                                <div class="col-8 text-break">Nguyễn Công Anh muốn đổi cuốn Harry Potter và Hoàng tử lai
+                                    lấy cuốn Conan</div>
+                                <div class="col-2 text-break"><button class="btn btn-success"> Đồng ý </button></div>
+                                <div class="col-2 text-break"><button class="btn btn-danger"> Từ chối </button></div>
+                            </div>
+                            <div class="row row-cols-3">
+                                <div class="col-8 text-break">Nguyễn Công Anh muốn đổi cuốn Harry Potter và Hoàng tử lai
+                                    lấy cuốn Conan</div>
+                                <div class="col-2 text-break"><button class="btn btn-success"> Đồng ý </button></div>
+                                <div class="col-2 text-break"><button class="btn btn-danger"> Từ chối </button></div>
+                            </div>
+
+                            <!-- <div class="hover">
+                                <div class="row row-cols-3">
+                                    <div class="col-8 text-break">Nguyễn Công Anh muốn đổi cuốn Harry Potter và Hoàng tử lai lấy cuốn Conan</div>
+                                    <div class="col-2 text-break"><button class="btn btn-success"> Đồng ý </button></div>
+                                    <div class="col-2 text-break"><button class="btn btn-danger"> Từ chối </button></div>                     
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+        <div class="col-12">
+            <h2>Danh sách những cuốn sách đã đăng tải:</h2>
+            <div class="row center-item">
+                <div class="single-course item">
+                    <div class="frame-book">
+                        <img class="img-fluid book-image" th:src="@{/img/harry1.jpg}">
+                    </div>
+                    <p class="available-label unavailable-label-color">Không có sẵn </p>
+                    <div class="details">
+                        <p class="title">Harry Potter và chiếc cốc lửa</p>
+                        <p> Nguyễn Công Anh</p>
+                    </div>
+                </div>
+                <div class="single-course item">
+                    <div class="frame-book">
+                        <img class="img-fluid book-image" th:src="@{/img/harry2.jpg}">
+                    </div>
+                    <p class="available-label available-label-color">Có sẵn</p>
+                    <div class="details">
+                        <p class="title">Harry Potter và Hoàng tử lai</p>
+                        <p> Nguyễn Công Anh</p>
+                    </div>
+                </div>
+
+                <div class="single-course item">
+                    <div class="frame-book">
+                        <img class="img-fluid book-image" th:src="@{/img/harry3.jpg}">
+                    </div>
+                    <p class="available-label unavailable-label-color">Không có sẵn</p>
+                    <div class="details">
+                        <p class="title">Harry Potter và phòng chứa bí mật</p>
+                        <p> Nguyễn Công Anh</p>
+                    </div>
+                </div>
+
+                <div class="single-course item">
+                    <div class="frame-book">
+                        <img class="img-fluid book-image " th:src="@{/img/conan3.jpg}">
+                    </div>
+                    <p class="available-label available-label-color">Có sẵn</p>
+                    <div class="details">
+                        <p class="title">Conan</p>
+                        <p> Nguyễn Công Anh</p>
+                    </div>
+                </div>
+                <div class="single-course item">
+                    <div class="frame-book">
+                        <img class="img-fluid book-image " th:src="@{/img/conan3.jpg}">
+                    </div>
+                    <p class="available-label available-label-color">Có sẵn</p>
+                    <div class="details">
+                        <p class="title">Conan</p>
+                        <p> Nguyễn Công Anh</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
 </body>
 

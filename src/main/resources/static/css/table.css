@@ -1,0 +1,47 @@
+.handmade-table-content {
+  height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.handmade-table-header .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-top: 0.5rem;
+  border-radius: 0.5rem;
+  border-top: #2c7a7b solid 2px;
+  text-align: center;
+}
+
+.handmade-table-header .row .text-break:nth-child(1) {
+  border-bottom: #2c7a7b solid 1px;
+  padding-bottom: 0.5rem;
+}
+
+.handmade-table-header .row .text-break:nth-child(2) {
+  border-bottom: #2c7a7b solid 1px;
+  padding-bottom: 0.5rem;
+}
+.handmade-table-header .row .text-break:nth-child(3) {
+  border-bottom: #2c7a7b solid 1px;
+  padding-bottom: 0.5rem;
+}
+
+
+.handmade-table-content .row{
+  padding: 1rem;
+  border-bottom: #2c7a7b solid 1px;
+  text-align: center;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.handmade-table-content .row .text-break:nth-child(1) {
+  border-right: #2c7a7b solid 1px;
+}
+.handmade-table-content .row .text-break:nth-child(2) {
+  border-right: #2c7a7b solid 1px;
+}
+.handmade-table-content  .hover :hover{
+  background-color: #feebc8;
+}
