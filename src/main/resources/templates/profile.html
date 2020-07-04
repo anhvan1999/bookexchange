@@ -9,6 +9,7 @@
     <title>Thông tin cá nhân</title>
     <th:block th:replace="fragments/common_head.html :: head" />
     <link rel="stylesheet" th:href="@{/css/table.css}">
+    <link rel="stylesheet" th:href="@{/css/profile.css}">
 </head>
 
 <body>
@@ -17,7 +18,32 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-6">
-                    <h2 class="d-flex justify-content-center" >Thông tin cá nhân:</h2>
+                    <div class="row">
+                        <div class="profile-title">Profile</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="img-fluid profile-img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                        </div>
+                        <div class="col-8 profile-field">
+                            <div class="row">
+                                <div class="col-3 profile-field-name">Tên:</div>
+                                <div class="col-9 profile-field-data">Nguyễn Công Anh</div>                            
+                            </div>
+                            <div class="row">
+                                <div class="col-3 profile-field-name">Trường:</div>
+                                <div class="col-9 profile-field-data">Đại học Bách Khoa tp HCM</div>                            
+                            </div>
+                            <div class="row">
+                                <div class="col-3 profile-field-name">Facebook:</div>
+                                <div class="col-9 profile-field-data">facebook.com/nguyenconganh.2020</div>                            
+                            </div>
+                            <div class="row">
+                                <div class="col-3 profile-field-name">Email:</div>
+                                <div class="col-9 profile-field-data">conganh123@hcmut.edu.vn</div>                            
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-6">
                     <h2 class="d-flex justify-content-center">Các yêu cầu trao đổi:</h2>

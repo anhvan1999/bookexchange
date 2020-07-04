@@ -1,0 +1,19 @@
+.profile-title{
+    padding: 10px 10px 0 80px;
+    font-size: larger;
+    font-weight: bold;
+}
+.profile-img{
+    width: 184px;
+    height: 210px;
+    padding: 10px 0 10px 20px;
+}
+.profile-field{
+    padding: 20px 0 20px 0;
+}
+.profile-field-name{
+    font-weight: bold;
+}
+.profile-field-data{
+    font-style: italic;
+}
