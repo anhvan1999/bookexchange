@@ -1,0 +1,26 @@
+.multi_img{
+    /* width: 30vw; */
+    white-space: nowrap;
+    overflow: auto;
+}
+.an_img{
+    width: 93px;
+    height: 150px;
+    margin: 3vh 2vw 3vh 2vw;
+}
+.book-title{
+    margin: 3vh 0 1vh 0;
+    color: rgb(0, 9, 129);
+    font-weight: bold;
+}
+.book-owner{
+    font-style: italic;
+}
+.option-img{
+    width: 93px;
+    height: 150px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    border-radius: 5px;
+}

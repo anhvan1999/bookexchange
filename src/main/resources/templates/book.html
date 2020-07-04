@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trang Chủ</title>
+    <th:block th:replace="fragments/common_head.html :: head" />
+</head>
+
+<body>
+    <th:block th:replace="fragments/common_header.html :: header(${username})" />
+    <div class="container center-item">
+
+        <div>
+            <form action="">
+                <div class="form-group">
+                    <h1 class="d-flex justify-content-center" style="color: blue;">Harry Potter và phòng chứa bí mật
+                    </h1>
+                </div>
+                <div class="form-group">
+                    <p class="d-flex justify-content-end">Chủ sở hữu: Nguyễn Công Anh</p>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <div class="row center-item" >
+                            <div class="multi_img">                    
+                                <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                                <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                                <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                                <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                                <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                                <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                                <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                                <img class="img-fluid an_img" th:src="@{/img/harry1.jpg}" alt="Hình ảnh">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="d-flex justify-content-center">
+                        <label  class="col-6" >Sách Nguyễn Công Anh mong muốn trao đổi: </label>
+                        
+                            <select class="selectpicker">
+                                <option value="id_conan" selected>Conan</option>
+                                <option value="id_harry2">Harry Potter và Hoàng tử lai</option>
+                                <option value="id_book4">The astrology of you and me</option>
+                            </select>
+                        
+                        
+                    </div>
+                </div>
+                 
+                <div class="form-group d-flex justify-content-center">
+                    <label  class="col-6">Chọn sách muốn trao đổi: </label>
+                    <select id="dlist" class="selectpicker" onChange="swapImage()">
+                        <option value="img/harry2.jpg" selected> Harry Potter và Hoàng tử lai</option>
+                        <option value="img/harry1.jpg">The astrology of you and me</option>
+                        <option value="img/harry1.jpg">Conan</option>
+                        <option value="money">25$</option>
+                    </select>
+                                     
+                </div>    
+                   
+                
+                <div class="form-group d-flex justify-content-center">
+                    
+                    <img id="imageToSwap" class="img-fluid an_img" th:src="@{/img/harry3.jpg}" />
+
+                    <script type="text/javascript">
+                        function swapImage(){
+                            var image = document.getElementById("imageToSwap");
+                            var dropd = document.getElementById("dlist");
+                            if (dropd.value != 'money'){
+                                $('#imageToSwap').show();
+                                image.src = dropd.value;	
+                            }
+                                
+                            else
+                                $('#imageToSwap').hide();	
+                        };
+                        </script>
+
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <input type="submit" class="btn btn-primary" value="Đề nghị trao đổi">
+                </div>
+            </form>
+
+
+
+        </div>
+        <!-- <div class="container center-item">
+        <div class="row center-item" >
+
+            <a th:href="@{/book(id=${1})}">
+                <div class="single-course item">
+                    <div class="frame-book" >
+                        <img class="img-fluid book-image" th:src="@{/img/harry3.jpg}">
+                    </div>
+                    <p class="available-label unavailable-label-color">Không có sẵn</p>
+                    <div class="details">
+                        <p class="title">Harry Potter và phòng chứa bí mật</p>
+                        <p> Nguyễn Công Anh</p>
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+    </div> -->
+</body>
+
+</html>
