@@ -1,4 +1,4 @@
-package com.scrum.bookexchange.register;
+package com.scrum.bookexchange.security.controller;
 
 import com.scrum.bookexchange.security.entity.User;
 import com.scrum.bookexchange.security.repos.UserRepos;

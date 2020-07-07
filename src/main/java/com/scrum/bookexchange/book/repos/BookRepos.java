@@ -10,5 +10,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BookRepos extends JpaRepository<Book, Long> {
+
     List<Book> findByOwner(User user);
+    
 }

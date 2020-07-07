@@ -1,4 +1,4 @@
-package com.scrum.bookexchange.register;
+package com.scrum.bookexchange.security.controller;
 
 import lombok.Data;
 

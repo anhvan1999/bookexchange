@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepos extends JpaRepository<User, Long> {
-    // @Query("Select email from user")
+    
     Optional<User> findByEmail(String username);
 
 }

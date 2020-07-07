@@ -1,4 +1,4 @@
-package com.scrum.bookexchange.upload;
+package com.scrum.bookexchange.book.controller;
 
 import java.io.File;
 import java.security.Principal;

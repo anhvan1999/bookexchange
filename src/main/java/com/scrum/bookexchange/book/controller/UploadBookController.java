@@ -1,4 +1,4 @@
-package com.scrum.bookexchange.uploadbook;
+package com.scrum.bookexchange.book.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
