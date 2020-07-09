@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <div class="d-flex justify-content-center">
-                        <label  class="col-6" >Sách Nguyễn Công Anh mong muốn trao đổi: </label>
+                        <label  class="col-6" >Sách bạn mong muốn trao đổi: </label>
                         
                             <select class="selectpicker">
                                 <option th:each="option: ${bookOption}" th:id="${option.id}" th:text="${option.optionString}"></option>
@@ -44,6 +44,7 @@
                     <label  class="col-6">Chọn sách muốn trao đổi: </label>
 
                     <select id="dlist" class="selectpicker" onchange="swapImage()">
+                        <option value="money">Chọn...</option>
                         <option th:each="book: ${bookOfUser}"  th:value="${'/image/' + book.defaultImageLink}" th:text="${book.title}"></option>
                         <option value="money">Tiền Mặt</option>
                     </select>
@@ -53,7 +54,7 @@
                 
                 <div class="form-group d-flex justify-content-center">
                     <div class="frame-book" >
-                        <img id="imageToSwap" class="img-fluid book-image" th:src="${'/image/' + bookOfUser[0].defaultImageLink}">
+                        <img id="imageToSwap" class="img-fluid book-image">
                     </div>
 
                     <script type="text/javascript">
